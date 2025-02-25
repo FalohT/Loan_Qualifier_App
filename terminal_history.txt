@@ -1,0 +1,50 @@
+  600  git add .
+  601  git commit -m "deleted file None from data folder"
+  602  git push
+  603  python app.py
+  604  python app.py
+  605  python app.py
+  606  python app.py
+  607  clear
+  608  python app.py
+  609  python app.py
+  610  clear
+  611  python app.py
+  612  python app.py
+  613  git add .
+  614  git commit -m "included the questionary.confirm method into the save_qualifying_loans function and added logic to save the filename if the user continues, fixed template literal in save_csv function, updated screenshots and code snippets in README.md"
+  615  git push'
+  616  git push
+  617  history 50 > terminal_history.txt
+  618  git add .
+  619  git commit -m "updated terminal_history.txt"
+  620  git push
+  621  clear
+  622  python app.py
+  623  clear
+  624  python app.py
+  625  clear
+  626  python app.py
+  627  clear
+  628  python app.py
+  629  clear
+  630  python app.py
+  631  git add .
+  632  git commit -m "updated README.md screenshots and code snippets"
+  633  git push
+  634  git status
+  635  clear
+  636  python app.py
+  637  clear
+  638  python app.py
+  639  python app.py
+  640  clear
+  641  python app.py
+  642  python app.py
+  643  clear
+  644  python app.py
+  645  python app.py
+  646  git add .
+  647  git commit -m "fixed an issue with def save_qualifying_loans not saving unqualified loans"
+  648  git push
+  649  history 50 > terminal_history.txt

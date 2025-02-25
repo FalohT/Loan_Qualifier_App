@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Qualifier</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Loan Qualifier Form</h1>
+    <form method="POST">
+        <label for="credit_score">Credit Score:</label>
+        <input type="number" id="credit_score" name="credit_score" min="300" max="850" required><br><br>
+
+        <label for="debt">Monthly Debt ($):</label>
+        <input type="number" step="0.01" id="debt" name="debt" min="0" required><br><br>
+
+        <label for="income">Monthly Income ($):</label>
+        <input type="number" step="0.01" id="income" name="income" min="0" required><br><br>
+
+        <label for="loan_amount">Loan Amount ($):</label>
+        <input type="number" step="0.01" id="loan_amount" name="loan_amount" min="0" required><br><br>
+
+        <label for="home_value">Home Value ($):</label>
+        <input type="number" step="0.01" id="home_value" name="home_value" min="0" required><br><br>
+
+        <label for="term">Loan Term (Years):</label>
+        <input type="number" id="term" name="term" min="1" max="30" required><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if qualifying_loans is defined %}
+        <h2>Results</h2>
+        <p>Risk Score: {{ risk_score }}</p>
+        <p>Approval Status: {{ approval_status }}</p>
+        <p>Estimated Interest Rate: {{ interest_rate }}%</p>
+        <p>Monthly Payment: ${{ "%.2f" | format(monthly_payment) }}</p>
+        
+        <h3>Qualifying Loans:</h3>
+        {% if qualifying_loans %}
+            <table border="1">
+                <tr>
+                    <th>Loan Size ($)</th>
+                    <th>Min Credit Score</th>
+                    <th>Max DTI</th>
+                    <th>Max LTV</th>
+                </tr>
+                {% for loan in qualifying_loans %}
+                    <tr>
+                        <td>{{ loan.loan_size }}</td>
+                        <td>{{ loan.credit_score_min }}</td>
+                        <td>{{ loan.debt_to_income_max }}</td>
+                        <td>{{ loan.loan_to_value_max }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p>No qualifying loans found.</p>
+        {% endif %}
+
+        <canvas id="riskChart" width="400" height="200"></canvas>
+        <script>
+            var ctx = document.getElementById('riskChart').getContext('2d');
+            var chart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Risk Score'],
+                    datasets: [{
+                        label: 'Score',
+                        data: [{{ risk_score }}],
+                        backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: { beginAtZero: true, max: 100 }
+                    }
+                }
+            });
+        </script>
+    {% endif %}
+</body>
+</html>

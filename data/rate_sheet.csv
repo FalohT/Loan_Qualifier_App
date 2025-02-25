@@ -1,0 +1,4 @@
+loan_size,credit_score_min,debt_to_income_max,loan_to_value_max
+200000,600,0.4,0.8
+300000,650,0.35,0.9
+150000,550,0.5,0.85
