@@ -169,7 +169,7 @@ Here are some screenshots and code snippets of the working app
             print(f'The file {output_path} was not written')
   ```
 
-See the [open issues](https://github.com/AnaIitico/loan_qualifier_app/issues) for a list of proposed features (and known issues).
+See the [open issues](https://github.com/FalohT/Loan_Qualifier_App/issues) for a list of proposed features (and known issues).
 
 <!-- CONTRIBUTING -->
 ## Contributing
@@ -191,9 +191,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <!-- CONTACT -->
 ## Contact
 
-Jose Tollinchi - [@josetollinchi][linkedin-url] - jtollinchi1971@gmail.com
+Oluwatobi Falolu - [@oluwatobi Falolu][linkedin-url] - falolu4@gmail.com
 
-Project Link: [https://github.com/AnaIitico/loan_qualifier_app](https://github.com/AnaIitico/loan_qualifier_app)
+Project Link: [https://github.com/FalohT/Loan_Qualifier_App](https://github.com/FalohT/Loan_qualifier_app)
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
